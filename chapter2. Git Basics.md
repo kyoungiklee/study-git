@@ -201,3 +201,30 @@ index 568e689..5ac03b5 100644
 +git diff 명령을 실행하면 수정했지만 아직 staged 상태가 아닌 파일을 비교해 볼 수 있다.
 
 ```
+
+커밋하려고 Staging Area에 넣은 파일의 변경 부분을 보고 싶으면 git diff --staged 옵션을 사용한다. 이 명령은 저장소에 커밋한 것과 Staging Area에 있는 것을 비교한다.
+``` 
+$ git diff --staged
+diff --git a/chapter2. Git Basics.md b/chapter2. Git Basics.md
+index 494f125..828648e 100644
+--- a/chapter2. Git Basics.md
++++ b/chapter2. Git Basics.md
+@@ -200,4 +200,5 @@ index 568e689..5ac03b5 100644
+
+ +git diff 명령을 실행하면 수정했지만 아직 staged 상태가 아닌 파일을 비교해 볼 수 있다.
+
+-```
+\ No newline at end of file
++```
++
+```
+
+git diff 는 Unstaged 상태인 것들만 보여준다. 수정한 파일을 모두 Staging Area에 넣었다면 git diff 명령은 아무것도 출력하지 않는다.
+
+Staged 상태인 파일은 git diff --cached 옵션으로 확인한다. --staged 와 --cached 는 같은 옵션이다.
+
+#### 변경사항 커밋하기
+
+Git은 생성하거나 수정하고 나서 git add 명령으로 추가하지 않은 파일은 커밋하지 않는다. 그 파일은 여전히 Modified 상태로 남아 있다. 
+커밋하기 전에 git status 명령으로 모든 것이 Staged 상태인지 확인할 수 있다. 그 후에 git commit 을 실행하여 커밋한다.
+
