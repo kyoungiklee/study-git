@@ -230,3 +230,39 @@ Git은 생성하거나 수정하고 나서 git add 명령으로 추가하지 않
 
 Git 설정에 지정된 편집기가 실행되고, 아래와 같은 텍스트가 자동으로 포함된다 (아래 예제는 Vim 편집기의 화면이다. 이 편집기는 쉘의 EDITOR 환경 변수에 등록된 편집기이고 보통은 Vim이나 Emacs을 사용한다. 
 또 시작하기 에서 설명했듯이 git config --global core.editor 명령으로 어떤 편집기를 사용할지 설정할 수 있다).
+
+``` 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#       modified:   chapter2. Git Basics.md
+#
+# Untracked files:
+#       -
+#       -mutilnst
+#       noPlugin
+#
+.git/COMMIT_EDITMSG [unix] (15:04 24/11/2023)                                                                                                                                                                                                                                                              1,0-1 All
+"/d/project/study/studyGit/.git/COMMIT_EDITMSG" [unix] 13L, 272B
+```
+메시지를 인라인으로 첨부할 수도 있다. commit 명령을 실행할 때 아래와 같이 -m 옵션을 사용한다.
+``` 
+$ git commit -m "git commit 내용 수정"
+[master c253fc9] ígit commit 내용 수정
+ 1 file changed, 3 insertions(+)
+
+```
+Git은 Staging Area에 속한 스냅샷을 커밋한다는 것을 기억해야 한다. 수정은 했지만, 아직 Staging Area에 넣지 않은 것은 다음에 커밋할 수 있다. 
+커밋할 때마다 프로젝트의 스냅샷을 기록하기 때문에 나중에 스냅샷끼리 비교하거나 예전 스냅샷으로 되돌릴 수 있다.
+
+
+#### Staging Area 생략하기
+
+Staging Area는 커밋할 파일을 정리한다는 점에서 매우 유용하지만 복잡하기만 하고 필요하지 않은 때도 있다. 
+아주 쉽게 Staging Area를 생략할 수 있다. git commit 명령을 실행할 때 -a 옵션을 추가하면 Git은 Tracked 상태의 파일을 자동으로 Staging Area에 넣는다. 
+그래서 git add 명령을 실행하는 수고를 덜 수 있다.
+``` 
+
+```
